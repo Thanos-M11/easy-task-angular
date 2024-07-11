@@ -1,8 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TaskComponent } from './task/task.component';
-import { DatePipe } from '@angular/common';
-import { NewTaskComponent } from './new-task/new-task.component';
-import { NewTaskData } from './task/task.model';
 import { TasksService } from './tasks.service';
 
 interface User {
@@ -13,10 +9,9 @@ interface User {
 
 @Component({
   selector: 'app-tasks',
-  standalone: true,
+  standalone: false,
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
-  imports: [TaskComponent, NewTaskComponent],
 })
 export class TasksComponent {
   @Input({ required: true }) userId!: string;
